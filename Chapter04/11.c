@@ -13,7 +13,27 @@
 
 int main()
 {   
+    const int password = 337;
+    int input;
+
+    do   // just run first and then check the condition
+    {
+        printf("Enter a number: ");
+        scanf("%d", &input); 
+    }
+    while(input != password);
+
+    // printf("Enter a number: ");
+    // scanf("%d", &input);   
     
+    // while(input != password)
+    // {
+    //     printf("Enter a number: ");
+    //     scanf("%d", &input); 
+    // }
+
+
+    printf("Good!");
 
 
     return 0; 
