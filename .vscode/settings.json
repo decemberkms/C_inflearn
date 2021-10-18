@@ -5,7 +5,8 @@
         "stdbool.h": "c",
         "functional": "c",
         "ctype.h": "c",
-        "complex.h": "c"
+        "complex.h": "c",
+        "iso646.h": "c"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }
