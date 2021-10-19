@@ -12,15 +12,26 @@
 #include <ctype.h>  // character functions
 #include <iso646.h>  // not used so often   -- and or not
 
-//redirection
+//user interface
 int main()
 {   
+    int count = 0;
+    
+    while(1)
+    {
+        printf("Current count is %d. Continue? (y/n)\n", count);
+        if (getchar() == 'n')
+            break;
+        else if ( c == 'y')
+        {
+            while(getchar() != '\n')
+                continue;
+                
+            count++;
+        }
+        
+    }
 
-    // printf("programming. \n");
-
-    char str[100];
-    scanf("%s", str);
-    printf("I love %s\n", str);
 
     return 0; 
 }
