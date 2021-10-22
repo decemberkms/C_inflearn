@@ -12,28 +12,14 @@
 #include <ctype.h>  // character functions
 #include <iso646.h>  // not used so often   -- and or not
 #include <stdlib.h>
-
-
-int fibonacci(int number);
+#include "Headers.h"
 
 int main()
 {   
 
-    for (int count = 1; count < 13; ++ count)
-        printf("%d \n", fibonacci(count));
-
+    print_hello();
+    print_hi();
+    
     return 0; 
 }
 
-int fibonacci(int number)
-{
-    printf("fibonacci with %d \n", number);
-    if (number < 2)
-    {
-        return 1;
-    } 
-    else
-    {
-        return fibonacci(number - 1) + fibonacci(number - 2);
-    }
-}
