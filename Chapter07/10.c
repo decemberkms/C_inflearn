@@ -24,21 +24,21 @@ int main()
 
     a_ptr = &a;
 
-    printf("%d %d %p \n",a, *a_ptr, a_ptr);
+    printf("%d %d %p \n",a, *a_ptr, a_ptr); // 123 123   a's address
     
     *a_ptr = 456;
 
-    printf("%d %d %p \n",a, *a_ptr, a_ptr);
+    printf("%d %d %p \n",a, *a_ptr, a_ptr);   //456 456   a's address
     
     // b = a_ptr;  not a good idea to use. 
     b = *a_ptr; // here b is assigned by the value.
 
-    printf("%d \n", b);
+    printf("%d, %p \n", b, &b);  // 456 and b's address
 
     *a_ptr = 789;
 
-    printf("%d\n", b);
-    printf("%d %d %p\n", a, *a_ptr, a_ptr);
+    printf("%d, %p \n", b, &b); //  456 b's address
+    printf("%d %d %p\n", a, *a_ptr, a_ptr); // 789 789 a's address
 
 
     b = 12;
