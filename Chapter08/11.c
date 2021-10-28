@@ -73,6 +73,34 @@ int main()
     // printf("%p\n", &arr[0][0]);
 
 
+    //Array of string of diverse lengths example
+
+
+    char* name[] = {"Aladin", "Jasmine", "Magic Carpet", "Genie"};
+
+    const int n = sizeof(name) / sizeof(char*);
+
+    for (int i = 0; i < n; ++i)
+        printf("%s at %p \n", name[i], name[i]);
+    printf("\n");
+
+    char aname[][15] = {"Aladin", "Jasmine", "Magic Carpet", "Genie", "Jafer"};
+    
+    const int an = sizeof(aname) / sizeof(char[15]);
+
+    for (int i = 0; i < an; ++i)
+        printf("%s at %p \n", aname[i], &aname[i]);
+    printf("\n");
+
+    int array[5];
+  
+    /* If %p is new to you, you can use %d as well */
+    printf("array=%p : &array=%p\n", array, &array); 
+
+    printf("array+1 = %p : &array + 1 = %p", array+1, &array+1);
+  
+
+
     return 0; 
 }
 
