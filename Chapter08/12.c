@@ -59,7 +59,7 @@ int main()
     float arr2d[2][4] = { {1.0f, 2.0f, 3.f, 4.f}, {5.f, 6.f, 7.f, 8.f} };
 
     float (*pa)[4]; // asingle pointer to an array of floats
-    float* ap[2]; // an array of two pointers to float
+    float* ap[2]; // an array of two pointers to float //a new variable
 
     printf("%zu\n", sizeof pa);
     printf("%zu\n", sizeof ap);
@@ -74,6 +74,29 @@ int main()
     ap[0] = arr2d[0];
     ap[1] = arr2d[1];
 
+    printf("%ld, %ld\n", (long unsigned)pa, (long unsigned)(pa + 1));
+    printf("%ld, %ld\n", (long unsigned)arr2d[0], (long unsigned)arr2d[1]);
+    printf("%ld, %ld\n", (long unsigned)pa[0], (long unsigned)(pa[0] + 1));
+    printf("%f\n", pa[0][0]); // 1
+    printf("%f\n", *pa[1]); // 5
+    printf("%f\n", pa[1][2]); // 7
+    printf("%f\n", *pa[0]);  // 1
+    printf("%f\n", **pa);  // 1
+    printf("%f\n", pa[1][3]); // 8
+    printf("%f\n", *(*(pa + 1) + 3));
+    printf("\n");
+
+
+
+    printf("%ld, %ld\n", (long unsigned)ap, (long unsigned)(ap + 1));
+    printf("%ld, %ld\n", (long unsigned)arr2d[0], (long unsigned)arr2d[1]);
+    printf("%ld, %ld\n", (long unsigned)ap[0], (long unsigned)(ap[0] + 1));
+    printf("%f\n", ap[0][0]);
+    printf("%f\n", *ap[0]);
+    printf("%f\n", **ap);
+    printf("%f\n", ap[1][3]);
+    printf("%f\n", *(*(ap + 1) + 3));
+    printf("\n");
 
     return 0; 
 }
