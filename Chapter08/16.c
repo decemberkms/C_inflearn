@@ -16,13 +16,16 @@
 #define ROWS 3
 #define COLS 4 // symbolic constant
 
-
-int sum2d_1(int ar[ROWS][COLS]); // first ROWS is ignored ( the most left index)
-int sum2d_2(int ar[][COLS], int row); // so this is normal. it is what it is. syntax
-
-
 int main()
 {   
+    //compound literal - literals are constants that are not symbolic
+
+    (int[2]) { 3, 4};
+    // int c[2] = (int[2]) { 3, 4} << error
+
+    // you can put this compound literal into a function
+
+
 
     return 0; 
 }
