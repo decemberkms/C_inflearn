@@ -8,7 +8,10 @@
         "complex.h": "c",
         "iso646.h": "c",
         "math.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "algorithm": "c",
+        "inttypes.h": "c",
+        "float.h": "c"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }
