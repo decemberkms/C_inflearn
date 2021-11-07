@@ -54,6 +54,7 @@ int main()
 
     int row = 3, col =2;
     int (*ptr2d)[col] = (int(*)[col])malloc(sizeof(int) * row * col);
+    // single pointer to an array of int
 
     if (!ptr2d) exit(1);
 
@@ -68,6 +69,22 @@ int main()
         printf("\n");
     }
 
+    // how to use it when VLA doesn't work
+
+    /*
+    row = 3 col =2
+    (r,c)
+    2D
+    (0,0) (0,1)
+    (1,0) (1,1)
+    (2,0) (2,1)
+    
+    1D
+    (0,0) (0,1) (1,0) (1,1) (2,0) (2,1)
+    0     1      2     3     4     5 = c + col * r
+    */
+
+   
 
     return 0; 
 }
