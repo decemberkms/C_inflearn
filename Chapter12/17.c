@@ -13,7 +13,7 @@
 #include <iso646.h>  // not used so often   -- and or not
 #include <stdlib.h> //srand()   //malloc(), free()
 
-// union usage
+// anonymous union usage
 
 struct personal_owner
 {
@@ -28,17 +28,17 @@ struct company_ownder
     char crn3[6];    
 };
 
-union data
-{
-    struct personal_owner po;
-    struct company_ownder co;    
-};
+
 
 struct car_data
 {
     char model[15];
     int status; // 0 = personal, 1 = company
-    union data ownerinfo;
+    union 
+    {
+        struct personal_owner po;
+        struct company_ownder co;    
+    };
 };
 
 void print_car(struct car_data car)
@@ -48,17 +48,17 @@ void print_car(struct car_data car)
 
     if (car.status == 0)
         printf("Personal owner: %s - %s\n",
-            car.ownerinfo.po.rrn1, car.ownerinfo.po.rrn2);
+            car.po.rrn1, car.po.rrn2);
     else
         printf("Company owner: %s - %s - %s\n",
-            car.ownerinfo.co.crn1, car.ownerinfo.co.crn2, car.ownerinfo.co.crn3);
+            car.co.crn1, car.co.crn2, car.co.crn3);
      printf("--------------------\n");
 }
 
 int main()
 {   
-    struct car_data my_car = { .model = "Car1", .status = 0, .ownerinfo.po = {"123456", "1234567"}};
-    struct car_data company_car = { .model = "Car2", .status = 1, .ownerinfo.co = {"123", "12", "12345"}};
+    struct car_data my_car = { .model = "Car1", .status = 0, .po = {"123456", "1234567"}};
+    struct car_data company_car = { .model = "Car2", .status = 1, .co = {"123", "12", "12345"}};
 
     print_car(my_car);
     
