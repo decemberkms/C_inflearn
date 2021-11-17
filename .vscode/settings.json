@@ -12,7 +12,8 @@
         "algorithm": "c",
         "inttypes.h": "c",
         "float.h": "c",
-        "time.h": "c"
+        "time.h": "c",
+        "stdalign.h": "c"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }
