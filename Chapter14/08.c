@@ -13,22 +13,28 @@
 #include <iso646.h>  // not used so often   -- and or not
 #include <stdlib.h> //srand()   //malloc(), free()
 
-// variadic arguments
+/*
+    Generic selection expression
+    - Generic programming: code is not specific to a particular type
 
-#define PRINT(X, ...) printf("Message " #X ": " __VA_ARGS__)
+    _Generic : C11 keyword! // c++'s template!
+*/
+
+#define MYTYPE(X) _Generic((X), \
+    int: "int", \
+    float: "float", \
+    double: "dobule", \
+    default: "other"\
+)
 
 int main()
-{    
+{     
+    int d = 5;
 
-    double x = 48;
-
-    double y;
-
-    y = sqrt(x);
-
-    PRINT(1, "x = %g\n", x);
-    
+    printf("%s\n", MYTYPE(d));
+    printf("%s\n", MYTYPE(2.0*d));
+    printf("%s\n", MYTYPE(3L));
+    printf("%s\n", MYTYPE(&d));
 
     return 0; 
-
 }

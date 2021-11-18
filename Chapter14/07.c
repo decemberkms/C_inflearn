@@ -13,22 +13,16 @@
 #include <iso646.h>  // not used so often   -- and or not
 #include <stdlib.h> //srand()   //malloc(), free()
 
-// variadic arguments
+// #pragma pack(1) // struct padding size  1-> no padding!
+// _Pragma("pack(1)")  // the same as above
+#define PACK1 _Pragma("pack(1)")
+PACK1 // use it like this
 
-#define PRINT(X, ...) printf("Message " #X ": " __VA_ARGS__)
+#pragma warning( disable : 4477 )
+#pragma warning( error : 4477 )
 
 int main()
-{    
-
-    double x = 48;
-
-    double y;
-
-    y = sqrt(x);
-
-    PRINT(1, "x = %g\n", x);
-    
+{     
 
     return 0; 
-
 }
